@@ -1,0 +1,42 @@
+// color variables :
+$black : #090808;
+$white: #f8f8f8;
+$light-red: #fd3333;
+$dark-red: #c80000;
+$light-green : #4fce53;
+$dark-green: #39AA3E;
+$light-blue: #098cf8;
+$dark-blue: #146EB7;
+$light-yellow: #ffec41;
+$dark-yellow: #f2df2a;
+$light-gray: #f0f0f0;
+$dark-gray: #acacac;
+
+
+
+
+// defining placeholders:
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* these .hidden-scrollbar are making scrollbar hidden but still work */
+%hidden-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar{
+        width: 0 !important;
+    }
+}
+
+
+
+
+// imports:
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
