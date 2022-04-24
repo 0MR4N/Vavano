@@ -118,6 +118,7 @@
     justify-content: left;
     width: 100%;
     height: 600px;
+    margin-bottom: 20px;
     position: relative;
     background: $dark-gray url(/images/backgrounds/shopping-girl.jpg) center top / cover no-repeat;
 
@@ -159,6 +160,7 @@
 
 // slider styles
 .slider {
+    background-color: $white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -167,21 +169,26 @@
     
     &__btn {
         @extend %flex-center;
-        background-color: transparent;
+        background-color: transparentize($color: $dark-gray, $amount: .5);
+        position: absolute;
+        right: 0;
         border: none;
         cursor: pointer;
-        height: min-content;
         margin: 10px;
-        opacity: 1;
+        padding: 10px;
+        border-radius: 50%;
         visibility: visible;
+        opacity: 1;
+        z-index: 1;
         transition: .25s ease-in-out;
 
         &--left {
+            left: 0;
             transform: rotate(180deg);
         }
         &--hidden {
-            visibility: hidden;
             opacity: 0;
+            visibility: hidden;
             transition: .25s ease-in-out;
         }
     }
@@ -289,12 +296,93 @@
 
 
 
+// categories section
+#categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 350px));
+    justify-content: center;
+    grid-gap: 40px;
+    margin: 20px;
+}
+
+.category {
+    display: flex;
+    flex-flow: nowrap column;
+    align-items: center;
+    background-color: $white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px 2.5px $dark-gray;
+    
+    &__image {
+        border-radius: 50%;
+        border: 2px solid transparentize($color: $black, $amount: 0.25);
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    &__name {
+        margin: 20px;
+        font-weight: normal;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    &__description {
+        height: 100px;  // dont put more than 140 char else that will show scrollbar
+        overflow-y: auto;
+        text-align: center;
+        position: relative;
+        margin-bottom: 20px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 1px;
+            background-color: transparentize($color: $dark-gray, $amount: 0.5);
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -5px); // -5px for pushing the line 5px to the top
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 // globals ( the styles which will be used in more than one place )
 .title {
     font-size: 2rem;
     padding: 1.5rem;
     font-variant: petite-caps;
     color: $black;
+    text-align: center;
+}
+
+.btn {
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    color: $black;
+    border: 1px solid $black;
+    transition: .25s ease-in-out;
+    
+    &:hover, &:focus {
+        background-color: $light-blue;
+        color: $white;
+        border-color: $light-blue;
+    }
+
+    &:active {
+        background-color: $dark-blue;
+    }
 }
 
 
@@ -462,27 +550,20 @@
 
     
     // slider section
-    .slider {
-        padding: 0 10px;
+    .slider__btn {
+        margin: 5px;
 
-        &__btn {
-            background-color: transparentize($color: $dark-gray, $amount: .5);
-            padding: 10px;
-            border-radius: 50%;
-            margin: 5px;
-            position: absolute;
-            z-index: 1;
-            &--left {
-                left: 0;
-            }
+        &--left {
+            left: 0;
+        }
 
-            &--right {
-                right: 0;
-            }
+        &--right {
+            right: 0;
         }
-        &__slider {
-            padding: 10px;
-        }
+    }
+
+    .slider__content {
+        width: 100%;
     }
 
 
@@ -501,5 +582,22 @@
         &__informations {
             bottom: 0;
         }
+    }
+
+
+
+
+
+
+
+
+
+    // categories section
+    .category__image {
+        width: 150px;
+        height: 150px;
+    }
+    .category__name {
+        font-size: large;
     }
 }
