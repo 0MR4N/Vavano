@@ -1,0 +1,87 @@
+#categories { // container
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 350px));
+    justify-content: center;
+    grid-gap: 40px;
+    margin: 20px;
+}
+
+.category {
+    display: flex;
+    flex-flow: nowrap column;
+    align-items: center;
+    background-color: $white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px 2.5px $dark-gray;
+    
+    &__image {
+        border-radius: 50%;
+        border: 2px solid transparentize($color: $black, $amount: 0.25);
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    &__name {
+        margin: 20px;
+        font-weight: normal;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    &__description {
+        height: 100px;  // dont put more than 140 char else that will show scrollbar
+        overflow-y: auto;
+        text-align: center;
+        position: relative;
+        margin-bottom: 20px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 1px;
+            background-color: transparentize($color: $dark-gray, $amount: 0.5);
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -5px); // -5px for pushing the line 5px to the top
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+// medium screen sizes : (less than 700px)
+@media all and (max-width: 700px) {
+
+    .category__image {
+        width: 150px;
+        height: 150px;
+    }
+    .category__name {
+        font-size: large;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+// small screen sizes : (less than 360px)
+@media all and (max-width: 360px) {
+
+
+
+}

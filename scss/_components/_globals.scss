@@ -1,0 +1,26 @@
+.title {
+    font-size: 2rem;
+    padding: 1.5rem;
+    font-variant: petite-caps;
+    color: $black;
+    text-align: center;
+}
+
+.btn {
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    color: $black;
+    border: 1px solid $black;
+    transition: .25s ease-in-out;
+    
+    &:hover, &:focus {
+        background-color: $light-blue;
+        color: $white;
+        border-color: $light-blue;
+    }
+
+    &:active {
+        background-color: $dark-blue;
+    }
+}

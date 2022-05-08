@@ -1,0 +1,85 @@
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    height: 600px;
+    margin-bottom: 20px;
+    position: relative;
+    background: $dark-gray url(/images/backgrounds/shopping-girl.jpg) center top / cover no-repeat;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        opacity: .65;
+    }
+
+    &__text-wrapper {
+        color: $white;
+        z-index: 1;
+        margin-left: 20px;
+    }
+
+    &__title {
+        font-size: xxx-large;
+        padding-left: 1.5rem;
+        margin-bottom: 4rem;
+        border-left: .2rem solid $white;
+    }
+    
+    &__paragraph {
+        font-size: x-large;
+        font-weight: thin;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+// medium screen sizes : (less than 700px)
+@media all and (max-width: 700px) {
+
+    .intro {
+        justify-content: center;
+    
+        &__text-wrapper {
+            margin: 0;
+        }
+    
+        &__title {
+            font-size: xx-large;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+    
+        &__paragraph {
+            font-size: medium;
+        }
+    
+    }
+
+}
+
+
+
+
+
+
+
+
+
+// small screen sizes : (less than 360px)
+@media all and (max-width: 360px) {
+
+
+
+}

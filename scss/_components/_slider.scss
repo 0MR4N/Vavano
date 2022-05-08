@@ -1,0 +1,179 @@
+.slider {
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 25px 0;
+    
+    &__btn {
+        @extend %flex-center;
+        background-color: transparentize($color: $dark-gray, $amount: .5);
+        position: absolute;
+        right: 0;
+        border: none;
+        cursor: pointer;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 50%;
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
+        transition: .25s ease-in-out;
+
+        &--left {
+            left: 0;
+            transform: rotate(180deg);
+        }
+        &--hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: .25s ease-in-out;
+        }
+    }
+    
+    &__content {
+        @extend %hidden-scrollbar;
+        display: flex;
+        padding: 20px;
+        flex-grow: 1;
+        flex-basis: 250px;
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+    }
+}
+
+
+
+
+
+// product cards
+.product-card {
+    position: relative;
+    height: 350px;
+    width: 250px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    border-radius: 10px;
+    overflow: hidden; // for border-radius
+    transition: .25s ease-in-out;
+
+    &:hover, &:focus {
+        box-shadow: 0 0 10px 2.5px transparentize($color: $dark-gray, $amount: .7);
+
+        .product-card__informations {
+            bottom: 0;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__informations {
+        width: 100%;
+        position: absolute;
+        bottom: -100%;
+        padding: 10px;
+        background-color: transparentize($color: $light-gray, $amount: .4);
+        transition: .25s ease-in-out;
+    }
+
+    &__name {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+    }
+
+    &__prices {
+        display: flex;
+        margin-top: 10px;
+        align-items: baseline;
+        justify-content: center;
+    }
+
+    &__price {
+        font-size: large;
+        color: $dark-green;
+        margin-right: 5px;
+    }
+
+    &__old-price {
+        text-decoration: line-through;
+        color: $light-red;
+        font-size: small;
+    }
+
+    &[data-offre]::after {
+        content: "offre";
+        color: $white;
+        background-color: $light-red;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        padding: 2px;
+        border-radius: 5px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+// medium screen sizes : (less than 700px)
+@media all and (max-width: 700px) {
+
+    .slider__btn {
+        margin: 5px;
+    
+        &--left {
+            left: 0;
+        }
+    
+        &--right {
+            right: 0;
+        }
+    }
+    
+    .slider__content {
+        width: 100%;
+    }
+    
+    
+    
+    
+    // product cards
+    .product-card {
+        box-shadow: 0 0 10px 2.5px transparentize($color: $dark-gray, $amount: .7);
+    
+        &__informations {
+            bottom: 0;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+// small screen sizes : (less than 360px)
+@media all and (max-width: 360px) {
+
+
+
+}
