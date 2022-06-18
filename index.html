@@ -59,8 +59,57 @@
                         </form>
 
                         
-                        <a href="#" class="navbar__btn material-icons">shopping_cart</a>
-                        <a href="#" class="navbar__btn material-icons">person</a>
+                        
+                        
+                        
+                        <label for="sidebar-products-open" class="navbar__btn material-icons">shopping_cart</label>
+                        <input type="radio" id="sidebar-products-open" name="sidebar-products-toggle" hidden>
+                        <div class="sidebar-products">
+
+                          <div class="sidebar-products__header">
+                            <label for="sidebar-products-close" class="material-icons">close</label>
+                            <input type="radio" hidden name="sidebar-products-toggle" id="sidebar-products-close">
+                          </div>
+
+                          <div class="sidebar-products__body">
+                            <!-- this should appear if the user has no product-->
+                            <!-- <div class="sidebar-products__empty">
+                              <span class="material-icons">
+                                production_quantity_limits
+                              </span>
+                              Your cart is empty!
+                              <br>
+                              Go add few products
+
+                            </div>  -->
+
+                            <!-- this should appear if the user has product(s) -->
+                            <!-- <div class="product-item">
+                              <img src="/images/productImages/product.jpg" class="product-item__image">
+                              <div class="info">
+                                <div class="info__name">product-name</div>
+                                <div class="info__price">100 $</div>
+                              </div>
+                              <button class="product-item__delete material-icons" title="remove product from cart">delete</button>
+                            </div> -->
+                            
+                          </div>
+                          
+                          <div class="sidebar-products__footer">
+                            <div>
+                              Number of products: 
+                              <span id="number-of-products">10</span>
+                            </div>
+                            <a href="#" class="btn">Deliver them now</a>
+                          </div>
+
+                        </div>
+
+
+                        <label class="navbar__btn material-icons">person</label>
+
+
+
                     </div>
             </div>
         </header>
@@ -79,89 +128,16 @@
 
                 <div class="slider__content">
 
-                    <div class="product-card" data-offre="1">
-                        <a href="#"><img src="/images/productImages/product.jpg" class="product-card__image"></a>
-                        <div class="product-card__informations">
-                            <div class="product-card__name">product-name</div>
-                            <div class="product-card__prices">
-                                <div class="product-card__price">10$</div>
-                                <div class="product-card__old-price">15$</div>
-                            </div>
-                        </div>
-                    </div><div class="product-card" data-offre="1">
-                        <a href="#"><img src="/images/productImages/product.jpg" class="product-card__image"></a>
-                        <div class="product-card__informations">
-                            <div class="product-card__name">product-name</div>
-                            <div class="product-card__prices">
-                                <div class="product-card__price">10$</div>
-                                <div class="product-card__old-price">15$</div>
-                            </div>
-                        </div>
-                    </div><div class="product-card" data-offre="1">
-                        <a href="#"><img src="/images/productImages/product.jpg" class="product-card__image"></a>
-                        <div class="product-card__informations">
-                            <div class="product-card__name">product-name</div>
-                            <div class="product-card__prices">
-                                <div class="product-card__price">10$</div>
-                                <div class="product-card__old-price">15$</div>
-                            </div>
-                        </div>
-                    </div><div class="product-card" data-offre="1">
-                        <a href="#"><img src="/images/productImages/product.jpg" class="product-card__image"></a>
-                        <div class="product-card__informations">
-                            <div class="product-card__name">product-name</div>
-                            <div class="product-card__prices">
-                                <div class="product-card__price">10$</div>
-                                <div class="product-card__old-price">15$</div>
-                            </div>
-                        </div>
-                    </div><div class="product-card" data-offre="1">
-                        <a href="#"><img src="/images/productImages/product.jpg" class="product-card__image"></a>
-                        <div class="product-card__informations">
-                            <div class="product-card__name">product-name</div>
-                            <div class="product-card__prices">
-                                <div class="product-card__price">10$</div>
-                                <div class="product-card__old-price">15$</div>
-                            </div>
-                        </div>
-                    </div><div class="product-card" data-offre="1">
-                        <a href="#"><img src="/images/productImages/product.jpg" class="product-card__image"></a>
-                        <div class="product-card__informations">
-                            <div class="product-card__name">product-name</div>
-                            <div class="product-card__prices">
-                                <div class="product-card__price">10$</div>
-                                <div class="product-card__old-price">15$</div>
-                            </div>
-                        </div>
-                    </div><div class="product-card" data-offre="1">
-                        <a href="#"><img src="/images/productImages/product.jpg" class="product-card__image"></a>
-                        <div class="product-card__informations">
-                            <div class="product-card__name">product-name</div>
-                            <div class="product-card__prices">
-                                <div class="product-card__price">10$</div>
-                                <div class="product-card__old-price">15$</div>
-                            </div>
-                        </div>
-                    </div><div class="product-card" data-offre="1">
-                        <a href="#"><img src="/images/productImages/product.jpg" class="product-card__image"></a>
-                        <div class="product-card__informations">
-                            <div class="product-card__name">product-name</div>
-                            <div class="product-card__prices">
-                                <div class="product-card__price">10$</div>
-                                <div class="product-card__old-price">15$</div>
-                            </div>
-                        </div>
-                    </div><div class="product-card" data-offre="1">
-                        <a href="#"><img src="/images/productImages/product.jpg" class="product-card__image"></a>
-                        <div class="product-card__informations">
-                            <div class="product-card__name">product-name</div>
-                            <div class="product-card__prices">
-                                <div class="product-card__price">10$</div>
-                                <div class="product-card__old-price">15$</div>
-                            </div>
-                        </div>
-                    </div>
-
+                  <!-- <div class="product-card" data-offre="1">
+                      <a href="#"><img src="/images/productImages/product.jpg" class="product-card__image"></a>
+                      <div class="product-card__informations">
+                          <div class="product-card__name">product-name</div>
+                          <div class="product-card__prices">
+                              <div class="product-card__price">10$</div>
+                              <div class="product-card__old-price">15$</div>
+                          </div>
+                      </div>
+                  </div> -->
 
                 </div>
 

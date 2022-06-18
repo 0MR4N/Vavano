@@ -98,8 +98,8 @@
 
         }
 
+        
         // searchbar
-
         &__searchbar {
           min-width: clamp(200px, 100%, 400px);
           position: absolute;
@@ -129,6 +129,154 @@
         #toggle-searchbar:checked + &__searchbar {
           top: 70px;
         }
+
+
+
+        // products sidebar
+        .sidebar-products {
+          position: fixed;
+          height: 100vh;
+          width: clamp(250px, 100%, 300px);
+          top: 0;
+          right: -100%;
+          background-color: $white;
+          display: grid;
+          grid-template-rows: 70px 1fr auto;
+          box-shadow: 0 0 10px $dark-gray;
+          transition: .25s ease-in-out;
+
+          &__header, &__footer {
+            box-shadow: inherit;
+            background-color: transparentize($color: $dark-gray, $amount: 0.7);
+          }
+
+          &__header {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+
+            // icon
+            label { 
+              font-size: 2rem;
+              cursor: pointer;
+              margin-right: 10px;
+            }
+          }
+          
+          &__body {
+            overflow: auto;
+
+            @at-root {
+              .sidebar-products__empty {
+                height: 100%;
+                width: 100%;
+                color: $dark-gray;
+                font-weight: bold;
+                user-select: none;
+                @extend %flex-center;
+                flex-direction: column;
+
+                // icon
+                span {
+                  font-size: 4rem;
+                  margin-bottom: 20px;
+                }
+              }
+
+              .product-item {
+                display: grid;
+                grid-template-columns: 50px 1fr auto;
+                align-items: center;
+                position: relative;
+                padding: 5px;
+                background-color: transparentize($color: $dark-gray, $amount: .9);
+                transition: .25s ease-in-out;
+
+                & + &::before {
+                  content: "";
+                  position: absolute;
+                  width: 80%;
+                  height: 2px;
+                  background-color: $white;
+                  top: 0;
+                  left: 50%;
+                  transform: translateX(-50%);
+                }
+
+                &:hover {
+                  background-color: transparentize($color: $dark-gray, $amount: .75);
+                }
+
+                &__image {
+                  width: 50px;
+                  height: 50px;
+                  object-fit: cover;
+                  border-radius: 5px;
+                }
+
+              .info {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+
+                &__name {
+                  width: 180px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                }
+
+                &__price {
+                  color: $dark-green;
+                }
+              }
+                
+                &__delete {
+                  font-size: 1.25rem;
+                  color: white;
+                  border-radius: 50%;
+                  border: none;
+                  padding: 3px; 
+                  margin-right: 5px;
+                  cursor: pointer;
+                  background-color: $light-red;
+                  transition: .25s ease-in-out;
+                  
+                  &:hover {
+                    background-color: $dark-red;
+                  }
+                }
+              }
+            }
+          }
+
+          &__footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+
+            .btn {
+              padding: 5px;
+              margin: 10px;
+              text-align: center;
+
+              &:hover, &:active, &:focus {
+                color: $white;
+                border-color: $black;
+                background-color: $black;
+              }
+            }
+          }
+
+        }
+
+        // if search icon is clicked toggle the sidebar-products
+        #sidebar-products-open:checked ~ .sidebar-products {
+          right: 0;
+        }
+
+
     }
 
     
