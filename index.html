@@ -49,7 +49,16 @@
                     </div>
 
                     <div class="navbar__btns">
-                        <a href="#" class="navbar__btn material-icons">search</a>
+
+                        <label for="toggle-searchbar" class="navbar__btn material-icons">search</label>
+                        <input hidden type="checkbox" id="toggle-searchbar">
+                        <form class="navbar__searchbar">
+                          <span class="material-icons">search</span>
+                          <input type="text" class="searchbar__input" placeholder="What are you looking for ?" maxlength="40">
+                          <input type="submit" hidden>
+                        </form>
+
+                        
                         <a href="#" class="navbar__btn material-icons">shopping_cart</a>
                         <a href="#" class="navbar__btn material-icons">person</a>
                     </div>
